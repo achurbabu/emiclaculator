@@ -1,0 +1,155 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+    <title>Loan Calculator</title>
+    <style>
+        #loading, #results { display: none}
+    </style>
+</head>
+
+<body class="bg-">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6 mx-auto">
+                <div class="card card-body text-center mt-5">
+                    <h1 class="heading display-5 pb-3">EMI Calculator</h1>
+                     <img src="CMTI_bBI-01.png" alt="Logo" class="rounded mx-auto d-block" style="width:250px;">
+                    <form id="loan-form">
+                        <div class="form-group">
+                            <div class="input-group mb-3">
+                                
+                                <select class="form-control"  id="laptop">
+                                <option value=" ">--Select Laptop--</option>
+                                <option value="A315-23">Acer A315-23</option>
+                                <option value="Z2-485">Acer One# 14 Z2-485</option>
+                                <option value="V15–15">Lenovo Ryzen 3 V15–15.6</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div style="display: none;" class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Educational Product</span>
+                                </div>
+                                <select id="edglobe">
+                                <option value=" ">--Select Product--</option>
+                                <option value="7">Young Genius Grade 7</option>
+                                 <option value="7">Young Genius Grade 7</option>
+                                  <option value="7">Young Genius Grade 7</option>
+                                <option value="7">Young Genius Grade 7</option>
+                                <option value="57">Young Genius - Combo 5-7</option>
+                                <option value="8">Super Genius Grade 8</option>
+                                <option value="9">Super Genius Grade 9</option>
+                                <option value="10">Super Genius Grade 10</option>
+                                <option value="810">Super Genius Grade -  Combo 8-10</option>
+                                <option value="12">Super Genius Grade 12 (PCBE)</option>
+                                </select>
+
+                            </div>
+                        </div>
+                        
+                       
+                        <div class="form-group">
+                            <input type="number" class="form-control" placeholder="Loan Period(Months)" id="years">
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-dark btn-block" value="Calculate">
+                        </div>
+                    </form>
+                    <!-- LOADING HERE -->
+                    <div id="loading"><img src="loading.gif" alt="loading"></div>
+                    <!-- RESULTS HERE -->
+
+                    <div id="results" class="pt-4">
+                      
+                        <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">EMI</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="monthly-payment" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group mb-3">
+                                    <div class="input-group-prepend">
+                                        <span class="input-group-text">Total Repayment</span>
+                                    </div>
+                                    <input type="number" class="form-control" id="total-payment" disabled>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                                            <div class="input-group-prepend">
+                                                <span class="input-group-text">Total Interest</span>
+                                            </div>
+                                            <input type="number" class="form-control" id="total-interest" disabled>
+                                        </div>
+                            </div>
+                      <div>     
+                             <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label >GST (18%+1): <span id="GST"></span></label>
+                           
+                                        </div>
+                            </div>
+                         
+                          
+                           
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+               <label >Down payment (20%): <span id="dp"></span></label>
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label >Loan Amount: <span id="la"></span></label>
+                            
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            
+                            <label >Processing Fee(2%): <span id="pf"></span></label>
+                            
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            <label >Upfront Collection: <span id="uc"></span></label>
+                                        </div>
+                            </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+        integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+    </script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
