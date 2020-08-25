@@ -26,6 +26,7 @@ function calculateResult(){
     var edp=0;
     var gst;
     var dnp;
+    var dnpi;
     var ufc;
     
     const monthlyPayment = document.getElementById('monthly-payment');
@@ -33,6 +34,7 @@ function calculateResult(){
     const totalInterest = document.getElementById('total-interest');
     const laptop = document.getElementById('laptop');
     const edglobe = document.getElementById('edglobe');
+    const dwnp = document.getElementById('downpayment');
     if (laptop.value=="A315-23") {
      lop = 44000;
      ldp = 37288;
@@ -46,6 +48,26 @@ function calculateResult(){
     if (laptop.value=="V15–15") {
      lop = 51000;
      ldp = 40500;
+  
+    }
+    if (edglobe.value=="lgkids") {
+     eop = 24000;
+     edp = 12990;
+  
+    }
+    if (edglobe.value=="lgjun") {
+     eop = 24000;
+     edp = 12990;
+  
+    }
+    if (edglobe.value=="yg5") {
+     eop = 24000;
+     edp = 12990;
+  
+    }
+    if (edglobe.value=="yg6") {
+     eop = 24000;
+     edp = 12990;
   
     }
     if (edglobe.value=="7") {
@@ -83,15 +105,29 @@ function calculateResult(){
      edp = 14970;
   
     }
-    
+    if (dwnp.value=="15") {
+        dnp = .15;
+    }
+    if (dwnp.value=="2") {
+        dnp = .2;
+    }
+    if (dwnp.value=="25") {
+        dnp = .25;
+    }
+    if (dwnp.value=="30") {
+        dnp = .3;
+    }
+    if (dwnp.value=="35") {
+        dnp = .35;
+    }
     const total = eop + lop;
     const totalsaving = total - edp - ldp;
     const loanamount = Math.round((edp+ ldp) * 1.19);
     gst = Math.round((edp + ldp)*.19);
-    dnp = Math.round(loanamount*.2);
-    const principal = loanamount - dnp;
+    dnpi = Math.round(loanamount*dnp);
+    const principal = loanamount - dnpi;
     var pf = Math.round(principal *.02);
-    ufc = dnp + pf ;
+    ufc = dnpi + pf ;
     const rate = 25.77/1200;
     const	time = years.value;
     const emi =(principal	* rate	* Math.pow(1+rate,time)) / (Math.pow(1+rate,time) - 1);
@@ -102,7 +138,7 @@ function calculateResult(){
         totalPayment.value = Math.round((mi * time));
         totalInterest.value = Math.round(((emi * time) - principal ));
         document.getElementById("GST").innerHTML = gst;
-        document.getElementById("dp").innerHTML = dnp;
+        document.getElementById("dp").innerHTML = dnpi;
         document.getElementById("la").innerHTML = principal;
         document.getElementById("pf").innerHTML = pf;
         document.getElementById("uc").innerHTML = ufc;
@@ -116,25 +152,7 @@ function calculateResult(){
     }else{
         showError('Please Check The Numbers');
     }
-    google.charts.load('current', {'packages':['corechart']});
-google.charts.setOnLoadCallback(drawChart);
-
-// Draw the chart and set the chart values
-function drawChart() {
-  var data = google.visualization.arrayToDataTable([
-  ['Task', 'Total Repayment'],
-  ['Total Intrest', totalInterest.value()],
-  ['Principle Amount', principal],
-  
-]);
-
-  // Optional; add a title and set the width and height of the chart
-  var options = {'title':'Total Repayment', 'width':550, 'height':400};
-
-  // Display the chart inside the <div> element with id="piechart"
-  var chart = new google.visualization.PieChart(document.getElementById('piechart'));
-  chart.draw(data, options);
-}
+    
 
 }
 

@@ -22,7 +22,7 @@
         <div class="row">
             <div class="col-md-6 mx-auto">
                 <div class="card card-body text-center mt-5">
-                    <h1 class="heading display-5 pb-3">EMI Calculator</h1>
+                    <h1 class="heading display-5 pb-3">EMI CALCULATOR</h1>
                      <img src="CMTI_bBI-01.png" alt="Logo" class="rounded mx-auto d-block" style="width:250px;">
                     <form id="loan-form">
                         <div class="form-group">
@@ -36,16 +36,17 @@
                                 </select>
                             </div>
                         </div>
-                        <div style="display: none;" class="form-group">
+                        <div  class="form-group">
                             <div class="input-group mb-3">
                                 <div class="input-group-prepend">
                                     <span class="input-group-text">Educational Product</span>
                                 </div>
                                 <select id="edglobe">
                                 <option value=" ">--Select Product--</option>
-                                <option value="7">Young Genius Grade 7</option>
-                                 <option value="7">Young Genius Grade 7</option>
-                                  <option value="7">Young Genius Grade 7</option>
+                                <option value="lgkids">Little Genius Kids</option>
+                                <option value="lgjun">Little Genius Junior(1-4)</option>
+                                <option value="yg5">Young Genius Class 5</option>
+                                <option value="yg6">Young Genius Class 6</option>
                                 <option value="7">Young Genius Grade 7</option>
                                 <option value="57">Young Genius - Combo 5-7</option>
                                 <option value="8">Super Genius Grade 8</option>
@@ -57,7 +58,22 @@
 
                             </div>
                         </div>
-                        
+                        <div  class="form-group">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Down Payment</span>
+                                </div>
+                                <select id="downpayment">
+                                <option value=" ">--Select Downpayment--</option>
+                                <option value="15">15%</option>
+                                <option value="2">20%</option>
+                                <option value="25">25%</option>
+                                <option value="3">30%</option>
+                                <option value="35">35%</option>
+                               </select>
+
+                            </div>
+                        </div>                        
                        
                         <div class="form-group">
                             <input type="number" class="form-control" placeholder="Loan Period(Months)" id="years">
@@ -72,7 +88,41 @@
 
                     <div id="results" class="pt-4">
                       
-                        <div class="form-group">
+                       
+                      <div>     
+                             <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label >GST (18%+1): <span id="GST"></span></label>
+                           
+                                        </div>
+                            </div>
+                         
+                          
+                           
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+               <label >Down payment : <span id="dp"></span></label>
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                                <label >Loan Amount: <span id="la"></span></label>
+                            
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            
+                            <label >Processing Fee(2%): <span id="pf"></span></label>
+                            
+                                        </div>
+                            </div>
+                            <div class="form-group">
+                                    <div class="input-group mb-3">
+                            <label >Upfront Collection: <span id="uc"></span></label>
+                                        </div>
+                            </div>
+                             <div class="form-group">
                                 <div class="input-group mb-3">
                                     <div class="input-group-prepend">
                                         <span class="input-group-text">EMI</span>
@@ -94,39 +144,6 @@
                                                 <span class="input-group-text">Total Interest</span>
                                             </div>
                                             <input type="number" class="form-control" id="total-interest" disabled>
-                                        </div>
-                            </div>
-                      <div>     
-                             <div class="form-group">
-                                    <div class="input-group mb-3">
-                                <label >GST (18%+1): <span id="GST"></span></label>
-                           
-                                        </div>
-                            </div>
-                         
-                          
-                           
-                            <div class="form-group">
-                                    <div class="input-group mb-3">
-               <label >Down payment (20%): <span id="dp"></span></label>
-                                        </div>
-                            </div>
-                            <div class="form-group">
-                                    <div class="input-group mb-3">
-                                <label >Loan Amount: <span id="la"></span></label>
-                            
-                                        </div>
-                            </div>
-                            <div class="form-group">
-                                    <div class="input-group mb-3">
-                            
-                            <label >Processing Fee(2%): <span id="pf"></span></label>
-                            
-                                        </div>
-                            </div>
-                            <div class="form-group">
-                                    <div class="input-group mb-3">
-                            <label >Upfront Collection: <span id="uc"></span></label>
                                         </div>
                             </div>
                             </div>
