@@ -76,7 +76,20 @@
                         </div>                        
                        
                         <div class="form-group">
-                            <input type="number" class="form-control" placeholder="Loan Period(Months)" id="years">
+                            <div class="input-group mb-3">
+                                <div class="input-group-prepend">
+                                    <span class="input-group-text">Loan Period</span>
+                                </div>
+                                <select id="years">
+                                <option value=" ">--Select Loan Period--</option>
+                                <option value="3">3</option>
+                                <option value="6">6</option>
+                                <option value="12">12</option>
+                                <option value="18">18</option>
+                                
+                               </select>
+
+                            </div>
                         </div>
                         <div class="form-group">
                             <input type="submit" class="btn btn-dark btn-block" value="Calculate">
