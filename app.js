@@ -37,7 +37,7 @@ function calculateResult(){
     const dwnp = document.getElementById('downpayment');
     if (laptop.value=="A315-23") {
      lop = 44000;
-     ldp = 37288;
+     ldp =  36975;
   
     }
       if (laptop.value=="Z2-485") {
