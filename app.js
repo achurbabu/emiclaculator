@@ -37,12 +37,12 @@ function calculateResult(){
     const dwnp = document.getElementById('downpayment');
     if (laptop.value=="A315-23") {
      lop = 44000;
-     ldp =  36975;
+     ldp = 36975;
   
     }
       if (laptop.value=="Z2-485") {
      lop = 51000;
-     ldp = 37288;
+     ldp = 36975;
   
     }
     if (laptop.value=="V15–15") {
@@ -134,11 +134,11 @@ function calculateResult(){
     const mi = Math.round(emi);
 
     if(isFinite(emi)){
-        monthlyPayment.value =mi.toFixed(2);
-        totalPayment.value = Math.round((mi * time));
-        totalInterest.value = Math.round(((emi * time) - principal ));
+        monthlyPayment.innerHTML =mi;
+        
+        totalInterest.innerHTML = Math.round(((emi * time) - principal ));
         document.getElementById("GST").innerHTML = gst;
-        document.getElementById("dp").innerHTML = dnpi;
+         
         document.getElementById("la").innerHTML = principal;
         document.getElementById("pf").innerHTML = pf;
         document.getElementById("uc").innerHTML = ufc;

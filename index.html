@@ -12,11 +12,26 @@
 
     <title>Loan Calculator</title>
     <style>
+        body, html {
+  height: 100%;
+}
+.bg {
+  /* The image used */
+  background-image: url("business office display background design_943575.jpg");
+
+  /* Full height */
+  height: 100%;
+
+  /* Center and scale the image nicely */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
         #loading, #results { display: none}
     </style>
 </head>
 
-<body class="bg-">
+<body class="bg">
 
     <div class="container">
         <div class="row">
@@ -38,11 +53,9 @@
                         </div>
                         <div  class="form-group">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Educational Product</span>
-                                </div>
-                                <select id="edglobe">
-                                <option value=" ">--Select Product--</option>
+                                
+                                <select class="form-control" id="edglobe">
+                                <option value=" ">--Select Educational Product--</option>
                                 <option value="lgkids">Little Genius Kids</option>
                                 <option value="lgjun">Little Genius Junior(1-4)</option>
                                 <option value="yg5">Young Genius Class 5</option>
@@ -60,10 +73,8 @@
                         </div>
                         <div  class="form-group">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Down Payment</span>
-                                </div>
-                                <select id="downpayment">
+                               
+                                <select class="form-control" id="downpayment">
                                 <option value=" ">--Select Downpayment--</option>
                                 <option value="15">15%</option>
                                 <option value="2">20%</option>
@@ -77,90 +88,105 @@
                        
                         <div class="form-group">
                             <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text">Loan Period</span>
-                                </div>
-                                <select id="years">
+                                
+                                <select class="form-control" id="years">
                                 <option value=" ">--Select Loan Period--</option>
                                 <option value="3">3</option>
                                 <option value="6">6</option>
                                 <option value="12">12</option>
-                                <option value="18">18</option>
+                                
                                 
                                </select>
 
                             </div>
                         </div>
+                        
                         <div class="form-group">
-                            <input type="submit" class="btn btn-dark btn-block" value="Calculate">
+                            <input type="submit" class="btn btn-dark btn-block" data-toggle="modal" data-target="#myModal" value="Calculate">
                         </div>
                     </form>
                     <!-- LOADING HERE -->
-                    <div id="loading"><img src="loading.gif" alt="loading"></div>
+                   
                     <!-- RESULTS HERE -->
+                  <div class="container">
+  
 
+  <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          
+        </div>
+        <div class="modal-body">
+         
+         <div id="loading"><img src="loading.gif" alt="loading"></div>
                     <div id="results" class="pt-4">
                       
                        
                       <div>     
                              <div class="form-group">
                                     <div class="input-group mb-3">
-                                <label >GST (18%+1): <span id="GST"></span></label>
+                                <label class="form-control" >GST (18%+1%): <strong>₹ <span id="GST"></span></strong></label>
                            
                                         </div>
                             </div>
                          
                           
                            
+                           
+                            
                             <div class="form-group">
                                     <div class="input-group mb-3">
-               <label >Down payment : <span id="dp"></span></label>
-                                        </div>
-                            </div>
-                            <div class="form-group">
-                                    <div class="input-group mb-3">
-                                <label >Loan Amount: <span id="la"></span></label>
+                            
+                            <label  class="form-control">Processing Fee(2%): <strong>₹ <span id="pf"></span></strong></label>
                             
                                         </div>
                             </div>
                             <div class="form-group">
                                     <div class="input-group mb-3">
-                            
-                            <label >Processing Fee(2%): <span id="pf"></span></label>
-                            
+                            <label class="form-control">Down Payment: <strong>₹ <span id="uc"></span></strong></label>
                                         </div>
                             </div>
                             <div class="form-group">
                                     <div class="input-group mb-3">
-                            <label >Upfront Collection: <span id="uc"></span></label>
+                                <label class="form-control" >Loan Amount: <strong>₹ <span id="la"></span></strong></label>
+                            
                                         </div>
                             </div>
                              <div class="form-group">
                                 <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">EMI</span>
-                                    </div>
-                                    <input type="number" class="form-control" id="monthly-payment" disabled>
+                                    
+                                <label class="form-control">EMI: <strong>₹ <span id="monthly-payment"></span></strong> </label>
+                                    
+                                   
                                 </div>
                             </div>
-                            <div class="form-group">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <span class="input-group-text">Total Repayment</span>
-                                    </div>
-                                    <input type="number" class="form-control" id="total-payment" disabled>
-                                </div>
-                            </div>
+                            
                             <div class="form-group">
                                     <div class="input-group mb-3">
-                                            <div class="input-group-prepend">
-                                                <span class="input-group-text">Total Interest</span>
+                                            
+                                              <label class="form-control">Total Interest: <strong>₹ <span id="total-interest"></span></strong></label>
                                             </div>
-                                            <input type="number" class="form-control" id="total-interest" disabled>
+                                            
                                         </div>
                             </div>
                             </div>
                     </div>
+                    </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+</div>
                 </div>
             </div>
         </div>
