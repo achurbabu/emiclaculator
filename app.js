@@ -33,7 +33,7 @@ function calculateResult(){
     const totalPayment = document.getElementById('total-payment');
     const totalInterest = document.getElementById('total-interest');
     const laptop = document.getElementById('laptop');
-    const edglobe = document.getElementById('edglobe');
+  
     const dwnp = document.getElementById('downpayment');
     if (laptop.value=="A315-23") {
      lop = 44000;
@@ -50,61 +50,7 @@ function calculateResult(){
      ldp = 40500;
   
     }
-    if (edglobe.value=="lgkids") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="lgjun") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="yg5") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="yg6") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="7") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-      if (edglobe.value=="57") {
-     eop = 48000;
-     edp = 19950;
-  
-    }
-    if (edglobe.value=="8") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="9") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-      if (edglobe.value=="810") {
-     eop = 48000;
-     edp = 19950;
-  
-    }
-    if (edglobe.value=="10") {
-     eop = 24000;
-     edp = 12990;
-  
-    }
-    if (edglobe.value=="12") {
-     eop = 28000;
-     edp = 14970;
-  
-    }
+   
     if (dwnp.value=="15") {
         dnp = .15;
     }
